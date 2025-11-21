@@ -7,6 +7,7 @@ public class CanteiroVO {
     private float areaCanteiroM2;
     private String observacoes;
     private float kgGerados;
+    private String status;
 
     public CanteiroVO() {
         
@@ -75,5 +76,12 @@ public class CanteiroVO {
 
     public void setKgGerados(float kgGerados) {
         this.kgGerados = kgGerados;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
