@@ -2,7 +2,7 @@ package br.edu.ifsp.hto.planejamento.modelo.VO;
 
 public class CanteiroVO {
     private int id;
-    private int planoId;
+    private int ordemProducaoId;
     private String nome;
     private float areaCanteiroM2;
     private String observacoes;
@@ -12,17 +12,17 @@ public class CanteiroVO {
         
     }
 
-    public CanteiroVO(int planoId, String nome, float areaCanteiroM2, String observacoes, float kgGerados) {
-        this.planoId = planoId;
+    public CanteiroVO(int ordemProducaoId, String nome, float areaCanteiroM2, String observacoes, float kgGerados) {
+        this.ordemProducaoId = ordemProducaoId;
         this.nome = nome;
         this.areaCanteiroM2 = areaCanteiroM2;
         this.observacoes = observacoes;
         this.kgGerados = kgGerados;
     }
 
-    public CanteiroVO(int id, int planoId, String nome, float areaCanteiroM2, String observacoes, float kgGerados) {
+    public CanteiroVO(int id, int ordemProducaoId, String nome, float areaCanteiroM2, String observacoes, float kgGerados) {
         this.id = id;
-        this.planoId = planoId;
+        this.ordemProducaoId = ordemProducaoId;
         this.nome = nome;
         this.areaCanteiroM2 = areaCanteiroM2;
         this.observacoes = observacoes;
@@ -37,12 +37,12 @@ public class CanteiroVO {
         this.id = id;
     }
 
-    public int getPlanoId() {
-        return planoId;
+    public int getOrdemProducaoId() {
+        return ordemProducaoId;
     }
 
-    public void setPlanoId(int planoId) {
-        this.planoId = planoId;
+    public void setOrdemProducaoId(int ordemProducaoId) {
+        this.ordemProducaoId = ordemProducaoId;
     }
 
     public String getNome() {

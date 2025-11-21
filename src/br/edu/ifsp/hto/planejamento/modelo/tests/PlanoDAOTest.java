@@ -4,7 +4,6 @@ import java.util.Calendar;
 import java.util.List;
 
 import br.edu.ifsp.hto.planejamento.controle.PlanejamentoControle;
-import br.edu.ifsp.hto.planejamento.modelo.VO.PlanoComCanteirosVO;
 import br.edu.ifsp.hto.planejamento.modelo.VO.PlanoVO;
 
 public class PlanoDAOTest {
@@ -26,8 +25,8 @@ public class PlanoDAOTest {
 
         planoC.inserir(novo);
 
-        PlanoComCanteirosVO pc = planoC.buscarPlanoComCanteiros(1);
-        pc.getCanteiros().forEach(canteiro -> System.out.println(canteiro.getNome()));
+        // PlanoComCanteirosVO pc = planoC.buscarPlanoComCanteiros(1);
+        // pc.getCanteiros().forEach(canteiro -> System.out.println(canteiro.getNome()));
 
         planoC.deletarPlano(6);
     }

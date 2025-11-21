@@ -258,19 +258,6 @@ public class PlanejamentoControle {
     }
 
     /**
-     * Busca todos os canteiros pertencentes a um plano
-     * 
-     * @param id identificador do canteiro
-     * 
-     * @return um {@code List} contendo {@code CanteiroVO} como elementos
-     * 
-     * @see CanteiroDAO#buscarCanteirosDoPlano(int)
-     */
-    public List<CanteiroVO> buscarCanteiroDoPlano(int id) {
-        return canteiroDAO.buscarCanteirosDoPlano(id);
-    }
-
-    /**
      * Busca um canteiro especifico que possue atividades
      * 
      * @param id identificador do canteiro
@@ -437,19 +424,6 @@ public class PlanejamentoControle {
      */
     public List<PlanoVO> buscarPlanosDoTalhao(int id) {
         return planoDAO.buscarPlanosDoTalhao(id);
-    }
-
-    /**
-     * Busca um plano especifico que possue canteiros
-     * 
-     * @param id identificador do plano
-     * 
-     * @return um objeto do tipo {@code PlanoComCanteirosVO}
-     * 
-     * @see PlanoDAO#buscarPlanoComCanteiros(int)
-     */
-    public PlanoComCanteirosVO buscarPlanoComCanteiros(int id) {
-        return planoDAO.buscarPlanoComCanteiros(id);
     }
 
     /**

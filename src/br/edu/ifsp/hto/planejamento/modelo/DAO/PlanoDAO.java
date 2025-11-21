@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.ifsp.hto.planejamento.modelo.ConexaoDoProjeto;
-import br.edu.ifsp.hto.planejamento.modelo.VO.CanteiroVO;
-import br.edu.ifsp.hto.planejamento.modelo.VO.PlanoComCanteirosVO;
 import br.edu.ifsp.hto.planejamento.modelo.VO.PlanoVO;
 
 public class PlanoDAO {
@@ -102,22 +100,6 @@ public class PlanoDAO {
 
         return plano;
     }
-
-    /**
-     * Busca um plano especifico que possue canteiros
-     * 
-     * @param id identificador do plano
-     * 
-     * @return um objeto do tipo {@code PlanoComCanteirosVO}
-     */
-    public PlanoComCanteirosVO buscarPlanoComCanteiros(int id) {
-        PlanoVO plano = buscarPorId(id);
-
-        CanteiroDAO canteiroDAO = new CanteiroDAO();
-        List<CanteiroVO> canteiros = canteiroDAO.buscarCanteirosDoPlano(id);
-
-        return new PlanoComCanteirosVO(plano, canteiros);
-    }
     
     /**
      * Busca todos os planos pertencentes a um talhão
@@ -194,8 +176,8 @@ public class PlanoDAO {
             stmt.setInt(1, id);
             stmt.executeUpdate();
 
-            CanteiroDAO canteiroDAO = new CanteiroDAO();
-            canteiroDAO.buscarCanteirosDoPlano(id).forEach(c -> canteiroDAO.deletar(c.getId()));
+            // CanteiroDAO canteiroDAO = new CanteiroDAO();
+            // canteiroDAO.buscarCanteirosDoPlano(id).forEach(c -> canteiroDAO.deletar(c.getId()));
 
             stmt.close();
             conn.close();
