@@ -39,6 +39,32 @@ public class AreaDAO {
         }
     }
 
+    public List<AreaVO> buscarAreasDoAssociado(int associadoId) {
+        List<AreaVO> lista = new ArrayList<>();
+
+        try {
+            Connection conn = ConexaoDoProjeto.connect();
+            String sql = "SELECT * FROM area WHERE associado_id = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, associadoId);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                lista.add(resultSetToArea(rs));
+            }
+
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return lista;
+
+    }
+
+
     /**
      * Lista todas as áreas presentes no banco de dados
      * 
