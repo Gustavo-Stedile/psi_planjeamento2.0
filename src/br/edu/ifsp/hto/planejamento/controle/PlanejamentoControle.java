@@ -37,6 +37,18 @@ public class PlanejamentoControle {
         areaDAO.inserir(area);
     }
 
+     /**
+     * Busca as áreas de um associado em específico
+     * 
+     * @param associadoId inteiro que representa o id do associado
+     * 
+     * @see AreaDAO#buscarAreasDoAssociado(int)
+     */
+    public List<AreaVO> buscarAreasDoAssociado(int associadoId) {
+        return areaDAO.buscarAreasDoAssociado(associadoId);
+    }
+
+
     /**
      * Lista todas as áreas presentes no banco de dados
      * 
